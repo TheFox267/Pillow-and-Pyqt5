@@ -1,1 +1,1 @@
-# Pillow-and-Pyqt5
+# Pillow and PyQt5

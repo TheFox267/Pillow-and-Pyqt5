@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>643</width>
+    <height>230</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Convert Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+    color: #b1b1b1;
+    background-color: #323232;
+    selection-background-color:#323232;
+    selection-color: black;
+    background-clip: border;
+    border-image: none;
+    border: 0px transparent black;
+    outline: 0;
+}
+
+QWidget:item:hover
+{
+    background-color: #D1DBCB;
+    color: black;
+}
+
+QWidget:item:selected
+{
+    background-color: #D1DBCB;
+    border: 0px
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="url_label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Verdana</family>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+font-weight: bold;
+
+border-radius: 15px;
+color: #1DA1F2;
+}</string>
+       </property>
+       <property name="text">
+        <string>URL</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="convert_line_edit">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Verdana</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  background-color: #19232D;
+  padding-top: 2px;
+  /* This QLineEdit fix  103, 111 */
+  padding-bottom: 2px;
+  /* This QLineEdit fix  103, 111 */
+  padding-left: 4px;
+  padding-right: 4px;
+  border-style: solid;
+  border: 1px solid #32414B;
+  color: #F0F0F0;
+  border-radius: 15px;
+}
+
+QLineEdit:disabled {
+  background-color: #19232D;
+  color: #787878;
+}
+
+QLineEdit:hover {
+  border: 1px solid #148CD2;
+  color: #F0F0F0;
+}
+
+QLineEdit:focus {
+  border: 1px solid #1464A0;
+}
+
+QLineEdit:selected {
+  background-color: #1464A0;
+  color: #32414B;
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Здесь должен быть url фотографии</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="convert_jpg_to_png_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы загрузить фотографию на Ваш компьютер и в приложение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+QPushButton:disabled {
+  background-color: #32414B;
+  color: #787878;
+  padding: 3px;
+}
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+     </property>
+     <property name="text">
+      <string>Конвертировать из jpg в png</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="convert_png_to_jpg_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы загрузить фотографию на Ваш компьютер и в приложение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+QPushButton:disabled {
+  background-color: #32414B;
+  color: #787878;
+  padding: 3px;
+}
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+     </property>
+     <property name="text">
+      <string>Конвертировать из png в jpg</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="back_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы загрузить фотографию на Ваш компьютер и в приложение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+QPushButton:disabled {
+  background-color: #32414B;
+  color: #787878;
+  padding: 3px;
+}
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+     </property>
+     <property name="text">
+      <string>Назад</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

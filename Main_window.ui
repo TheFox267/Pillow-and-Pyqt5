@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>696</width>
+    <height>484</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Main Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+    color: #b1b1b1;
+    background-color: #323232;
+    selection-background-color:#323232;
+    selection-color: black;
+    background-clip: border;
+    border-image: none;
+    border: 0px transparent black;
+    outline: 0;
+}
+
+QWidget:item:hover
+{
+    background-color: #D1DBCB;
+    color: black;
+}
+
+QWidget:item:selected
+{
+    background-color: #D1DBCB;
+    border: 0px
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="main_label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font-weight: bold;
+
+border-radius: 15px;
+color: #1DA1F2;
+}</string>
+      </property>
+      <property name="text">
+       <string>Image Adjustment</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="rotate_image_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну поворота изображения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Повернуть изображение</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="black_and_white_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну превращение изображения в чёрно-белый стиль&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Сделать черно-белое изображение</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="add_filter_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну с наложением фильтра на изображение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Наложить фильтр на изображение</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="gif_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну с созданием gif анимации из нескольких фотографий&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Сделать gif анимацию из нескольких изображений</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="watermark_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну с наложением водяного знака на изображение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Наложить водяной знак</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="add_text_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну с добавлением текста на изображение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Добавить текст на изображение</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="convert_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы перейти к окну с изменение формата изображения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Конвертировать изображение</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="exit_button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Нажмите на кнопку, чтобы выйти из приложения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+
+}
+QPushButton:hover{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #fff;
+}
+QPushButton:pressed{
+font-weight: bold;
+border: 1px solid #1DA1F2;
+border-radius: 15px;
+color: #1DA1F2;
+background-color: #cccccc;
+}
+
+ QToolTip {
+     border: 2px solid darkkhaki;
+     padding: 5px;
+     border-radius: 3px;
+     opacity: 200;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Выход</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
